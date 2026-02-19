@@ -6,3 +6,21 @@ dist
 # Ignore the output video from Git but not videos you import into src/.
 out
 whisper.cpp
+
+# Local media assets (keep JSON only in repo)
+public/input.mp4
+public/projects/**/*.mp4
+public/projects/**/*.mp3
+public/projects/**/*.mov
+public/projects/**/*.mkv
+public/projects/**/*.webm
+public/projects/**/*.wav
+public/clock-beep.mp3
+
+# Ignore root-level local media assets
+public/*.mp4
+public/*.mp3
+public/*.mov
+public/*.mkv
+public/*.webm
+public/*.wav
