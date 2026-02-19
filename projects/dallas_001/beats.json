@@ -1,0 +1,12 @@
+[
+  {
+    "file": "01_wake.mp4",
+    "time": "5:30 am",
+    "captions": ["I don't want to wake up.", "But the city never waits."]
+  },
+  {
+    "file": "02_commute.mp4",
+    "time": "7:10 am",
+    "captions": ["Another long day begins.", "Traffic feels endless."]
+  }
+]
