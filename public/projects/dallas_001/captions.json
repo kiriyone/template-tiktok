@@ -1,0 +1,20 @@
+{
+  "01_wake.mp4": [
+    "I don't want to wake up.",
+    "My body feels heavy."
+  ],
+  "02_commute.mp4": [
+    "Another long day begins.",
+    "The train is packed."
+  ],
+  "03_work.mp4": "Emails and meetings keep piling up faster than I can breathe.",
+  "04_afterwork.mp4": [
+    "Finally done for today.",
+    "I just want to get home."
+  ],
+  "05_food.mp4": "Cheap dinner again, but at least it is warm.",
+  "06_sleep.mp4": [
+    "My eyes are burning.",
+    "In a few hours, it starts again."
+  ]
+}
