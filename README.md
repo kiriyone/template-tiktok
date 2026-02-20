@@ -1,83 +1,78 @@
-# Remotion video
+# Overtime Vlog Horizontal (Remotion)
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+A simple horizontal vlog template that stitches multiple beats in order and overlays time + subtitles.
 
-Welcome to your Remotion project!
+## Composition
 
-## Commands
+- ID: `OvertimeVlogHorizontal`
+- Resolution: `1920x1080`
+- FPS: `30`
+- Input clips are muted by default
+- Optional BGM: `public/projects/dallas_001/bgm.mp3` at volume `0.15`
+- Optional SFX: `public/clock-beep.mp3` plays at each beat boundary
 
-**Install Dependencies**
+## Asset placement
 
-```console
-npm i
+Put your files here (do not commit big binaries to GitHub unless using Git LFS):
+
+```text
+public/
+  projects/
+    dallas_001/
+      beats.json
+      captions.json
+      01_wake.mp4 (or .jpg/.png)
+      02_commute.mp4 (or .jpg/.png)
+      03_work.mp4 (or .jpg/.png)
+      04_afterwork.mp4
+      05_food.mp4
+      06_sleep.mp4
+      bgm.mp3        (optional)
+  clock-beep.mp3     (optional)
 ```
 
-**Start Preview**
+## beats.json format
 
-```console
+`public/projects/dallas_001/beats.json`
+
+```json
+[
+  {"file": "01_wake.mp4", "time": "5:30 am", "translateYPercent": -8},
+  {"file": "02_commute.mp4", "time": "7:10 am"}
+]
+```
+
+- `file`: media filename inside `public/projects/dallas_001/` (`.mp4` or `.jpg/.jpeg/.png/.webp`)
+- `time`: shown top-right in large text
+- `translateYPercent` (optional): vertical crop offset for cover layout. Example: `-8` moves media upward.
+- image files are also supported and will display for a default 6 seconds each
+
+## captions.json format
+
+`public/projects/dallas_001/captions.json`
+
+```json
+{
+  "01_wake.mp4": ["I don't want to wake up.", "My body feels heavy."],
+  "02_commute.mp4": "Another long day begins and the train is already packed."
+}
+```
+
+- Supports **array of lines** or **single long string** per beat.
+- Long strings are auto-wrapped/split using:
+  - `maxCharsPerLine = 28`
+  - `maxLines = 2`
+- Caption chunks are shown sequentially with equal time within each beat.
+
+## Run
+
+```bash
+npm i
 npm run dev
 ```
 
-**Render video**
+## Render
 
-```console
-npx remotion render
+```bash
+npx remotion render src/index.ts OvertimeVlogHorizontal out/video.mp4
 ```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Captioning
-
-Replace the `sample-video.mp4` with your video file.
-Caption all the videos in you `public` by running the following command:
-
-```console
-node sub.mjs
-```
-
-Only caption a specific video:
-
-```console
-node sub.mjs <path-to-video-file>
-```
-
-Only caption a specific folder:
-
-```console
-node sub.mjs <path-to-folder>
-```
-
-## Configure Whisper.cpp
-
-Captioning will download Whisper.cpp and the 1.5GB big `medium.en` model. To configure which model is being used, you can configure the variables in `whisper-config.mjs`.
-
-### Non-English languages
-
-To support non-English languages, you need to change the `WHISPER_MODEL` variable in `whisper-config.mjs` to a model that does not have a `.en` sufix.
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://remotion.dev/discord).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
