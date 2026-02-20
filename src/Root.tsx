@@ -1,24 +1,19 @@
-import { Composition, staticFile } from "remotion";
+import {Composition} from "remotion";
 import {
-  CaptionedVideo,
-  calculateCaptionedVideoMetadata,
-  captionedVideoSchema,
-} from "./CaptionedVideo";
-
-// Each <Composition> is an entry in the sidebar!
+  calculateOvertimeVlogMetadata,
+  OvertimeVlogHorizontal,
+  overtimeVlogSchema,
+} from "./OvertimeVlogHorizontal";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <Composition
-      id="CaptionedVideo"
-      component={CaptionedVideo}
-      calculateMetadata={calculateCaptionedVideoMetadata}
-      schema={captionedVideoSchema}
-      width={1080}
-      height={1920}
-      defaultProps={{
-        src: staticFile("sample-video.mp4"),
-      }}
+      id="OvertimeVlogHorizontal"
+      component={OvertimeVlogHorizontal}
+      calculateMetadata={calculateOvertimeVlogMetadata}
+      schema={overtimeVlogSchema}
+      width={1920}
+      height={1080}
     />
   );
 };
