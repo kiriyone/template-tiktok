@@ -1,8 +1,8 @@
 [
-  {"file": "01_wake.mp4", "time": "5:30 am", "translateYPercent": -8},
-  {"file": "02_commute.mp4", "time": "7:10 am"},
-  {"file": "03_work.mp4", "time": "9:00 am"},
-  {"file": "04_afterwork.mp4", "time": "11:40 pm"},
-  {"file": "05_food.mp4", "time": "1:20 am"},
-  {"file": "06_sleep.mp4", "time": "2:50 am"}
+  {"file": "01_wake.mp4", "time": "6:30 pm"},
+  {"file": "02_commute.mp4", "time": "7:00 pm"},
+  {"file": "03_work.mp4", "time": "8:45 pm"},
+  {"file": "04_afterwork.mp4", "time": "9:00 pm"},
+  {"file": "05_food.mp4", "time": "9:20 pm"},
+  {"file": "06_sleep.mp4", "time": "10:00 pm"}
 ]
